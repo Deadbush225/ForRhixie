@@ -1,0 +1,90 @@
+@import "../../typed.css-0.8.9/typed.scss";
+
+body,
+html {
+    color: rgb(217, 23, 217);
+    background-color: #181e55;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+.main-container {
+    flex-direction: column;
+    display: flex;
+    width: auto;
+    height: auto;
+}
+
+.flex-container {
+    width: 100%;
+    height: calc(100% - 16px); // minus the innate margin
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ SCROLLBAR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    // color: #181e55;
+    background-color: #181e55;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #a3a7c6;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 4em;
+
+    @include typed("Hi!👋", "How are you?😊", "I hope you're doing well, my love!😘", "I just want to say that...", 1.5, (caret-width: 2px, caret-space: 2px, iterations: 1, end-on: "You are "));
+    // overflow: hidden;
+    // /* Ensures the content is not revealed until the animation */
+    // border-right: .15em solid orange;
+    // /* The typwriter cursor */
+    // white-space: nowrap;
+    // /* Keeps the content on a single line */
+    // margin: 0 auto;
+    // /* Gives that scrolling effect as the typing happens */
+    // letter-spacing: .15em;
+    // /* Adjust as needed */
+    // animation:
+    //     typing 3.5s steps(40, end),
+    //     blink-caret .75s step-end infinite;
+}
+
+h3 {
+    font-size: 3em;
+
+    // @include typed("<[250]>Loved", "Beautiful", "Sexy", "Patient", 1, (caret: false, iterations: 1, end-on: "my only ONE💗"));
+    // overflow: hidden;
+    // /* Ensures the content is not revealed until the animation */
+    // border-right: .15em solid orange;
+    // /* The typwriter cursor */
+    // white-space: nowrap;
+    // /* Keeps the content on a single line */
+    // margin: 0 auto;
+    // /* Gives that scrolling effect as the typing happens */
+    // letter-spacing: .15em;
+    // /* Adjust as needed */
+    // animation:
+    //     typing 3.5s steps(40, end),
+    //     blink-caret .75s step-end infinite;
+}
+
+
+.gallery-cell {
+    img {
+        // width: 200px;
+        height: 200px;
+        padding: 0;
+        // outline: 1px solid red;
+    }
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ TYPING EFFECT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
