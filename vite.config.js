@@ -74,7 +74,7 @@ export default defineConfig({
 
 					if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
 						// extType = "assets";
-						return "assets/[name]-[hash][extname]";
+						return "assets/[name][extname]";
 					} else if (/css|ts/i.test(extType)) {
 						return "styles/[name]-[hash][extname]";
 					} else if (/html/i.test(extType)) {
@@ -95,7 +95,7 @@ export default defineConfig({
 		},
 
 		modulePreload: {
-			polyfill: false,
+			polyfill: false, // todo: SEARCH what is this
 		},
 
 		// commonjsOptions: {

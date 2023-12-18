@@ -1,0 +1,1 @@
+import{$ as t}from"./vendor-48fa5b8f.js";import"./main-fb45de54.js";let r=0;document.querySelectorAll(".gallery").forEach((o,a,i)=>{let l=t(o);console.log(l);for(let e=1;e<10;e++)r++,l.append('<div class="gallery-cell"><img src="./assets/img('+r+').jpg" alt=""/></div>')});
