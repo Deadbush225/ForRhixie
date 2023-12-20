@@ -2,7 +2,7 @@
 
 ---
 
-🚀 Deployment Link: https://deadbush225.github.io/Prismarine/
+🚀 Deployment Link: https://deadbush225.github.io/ForRhixie/
 
 ⚙ Technology Stack:
 

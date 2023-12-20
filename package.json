@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
-		"bld": "vite build",
+		"bld": "vite build && node CopyAssets.js",
 		"preview": "vite preview",
 		"cmt": "git add . && git commit -m \"[automated push]\"",
 		"commit": "git add . && git commit"
