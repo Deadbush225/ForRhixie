@@ -2,12 +2,13 @@
 import "https://code.jquery.com/jquery-3.6.3.slim.js";
 import "https://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js";
 
-// declare global {
-// 	interface JQuery {
-// 		// waitForImages(func: Function): void;
-// 		// flickity(options: any);
-// 	}
-// }
+declare global {
+	interface JQuery {
+		// setJQuery(jquery: any): void;
+		waitForImages(func: Function): void;
+		// flickity(options: any);
+	}
+}
 
 // import "../node_modules/flickity/dist/flickity.pkgd.min.js"; // //todo: make this persist on build
 
@@ -17,7 +18,7 @@ import "../node_modules/flickity/dist/flickity.min.css";
 
 import "./styles/styles.scss";
 
-function sleepFor(sleepDuration) {
+function sleepFor(sleepDuration: number) {
 	var now = new Date().getTime();
 	while (new Date().getTime() < now + sleepDuration) {
 		/* Do nothing */
@@ -25,7 +26,7 @@ function sleepFor(sleepDuration) {
 }
 
 let num = 1;
-for (let index = 0; index < 1; index++) {
+for (let index = 0; index < 6; index++) {
 	let $gallery = $([`<div class="carousel">`, `</div>`].join("\n"));
 
 	// let $gallery = $(".carousel");
