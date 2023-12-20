@@ -37,7 +37,7 @@ export default defineConfig({
 		splitVendorChunkPlugin(),
 		// commonjs({
 		// 	strictRequires: true,
-		// 	include: ["/src/flickity/flickity.pkgd.min.js"],
+		// 	include: /node_modules/,
 		// 	transformMixedEsModules: true,
 		// }),
 		// NodeResolve({
