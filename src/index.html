@@ -4,6 +4,22 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>I love you!</title>
+		<!-- <script
+			src="https://code.jquery.com/jquery-3.6.3.slim.js"
+			integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc="
+			crossorigin="anonymous"
+		></script> -->
+
+		<!-- <script src="../node_modules/jquery/dist/jquery.slim.js"></script> -->
+
+		<!--<link
+			rel="stylesheet"
+			href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+		/>
+		-->
+		<!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js"></script> -->
+		<script type="module" src="./script.ts"></script>
 	</head>
 	<body>
 		<div class="main-container">
@@ -16,51 +32,15 @@
 				</div>
 			</div>
 			<div class="gallery-container">
-				<div
-					class="gallery js-flickity"
-					data-flickity-options='{ "wrapAround": true, "autoPlay": 1700,
-                "pauseAutoPlayOnHover": false}'
-				>
-					<!-- <div class="gallery-cell"> -->
-					<!-- <img src="./assets/img (1).jpg" alt="" /> -->
-					<!-- </div> -->
-					<!-- <div class="gallery-cell">
-						<img src="./assets/img (0).jpg" alt="" />
+				<div class="carousel" data-flickity-options="{ 'wrapAround':true }">
+					<div class="carousel-cell">
+						<img src="https://picsum.photos/200/200" alt="" />
 					</div>
-					<div class="gallery-cell">
-						<img src="./assets/img (1).jpg" alt="" />
-					</div>
-					<div class="gallery-cell">
-						<img src="./assets/img (2).jpg" alt="" />
-					</div>
-					<div class="gallery-cell">
-						<img src="./assets/img (3).jpg" alt="" />
-					</div>
-					<div class="gallery-cell">
-						<img src="./assets/img (4).jpg" alt="" />
-					</div> -->
-					<!-- <div
-						class="gallery js-flickity"
-						data-flickity-options='{ "wrapAround": true, "autoPlay": 1700,
-                    "pauseAutoPlayOnHover": false}'
-					></div>
-					<div
-						class="gallery js-flickity"
-						data-flickity-options='{ "wrapAround": true, "autoPlay": 1700,
-                    "pauseAutoPlayOnHover": false}'
-					></div>
-					<div
-						class="gallery js-flickity"
-						data-flickity-options='{ "wrapAround": true, "autoPlay": 1700,
-                    "pauseAutoPlayOnHover": false}'
-					></div> -->
 				</div>
 			</div>
 		</div>
 	</body>
-	<script></script>
 	<!-- <script type="module" src="./scripts/fillup.ts"></script> -->
 	<!-- <script defer type="module" src="./script.ts"></script> -->
-	<script type="module" src="./scripts/fillup.ts"></script>
-	<script defer type="module" src="./script.ts"></script>
+	<!-- <script type="module" src="./script.ts"></script> -->
 </html>

@@ -1,43 +1,52 @@
-import $ from "jquery";
+import "./scripts/interfaces.ts";
+
+import Flickity from "../node_modules/flickity/dist/flickity.pkgd.min.js";
+import "../node_modules/flickity/dist/flickity.min.css";
 
 import "./styles/styles.scss";
 
-// import { readdir } from "fs";
-// const fs = require("fs");
+function sleepFor(sleepDuration) {
+	var now = new Date().getTime();
+	while (new Date().getTime() < now + sleepDuration) {
+		/* Do nothing */
+	}
+}
 
-// window.onload = function () {
-// readdir("./folder", (err, files) => {
-// 	if (err) throw err;
-// 	console.log(files);
-// });
-// typewriter();
-// alert("I miss you");
+let num = 1;
+for (let index = 0; index < 1; index++) {
+	let $gallery = $([`<div class="carousel">`, `</div>`].join("\n"));
 
-/* ------------------------------------------------------------------------- */
-// document.querySelectorAll(".gallery").forEach((element, index, parent) => {
-// 	let gallery = $(element);
+	// let $gallery = $(".carousel");
 
-// 	console.log(gallery);
+	for (let index = 1; index < 10; index++) {
+		$gallery.append(
+			'<div class="carousel-cell"><img id="image" src="./assets/img(' +
+				num +
+				').jpg" alt="" /></div>'
+		);
+		num++;
+	}
 
-// 	for (let index = 0; index < 10; index++) {
-// 		gallery.append(
-// 			'<div class="gallery-cell"><img src="./assets/img (' +
-// 				index +
-// 				').jpg" alt=""/></div>'
-// 		);
-// 	}
-// });
-/* ------------------------------------------------------------------------- */
-// fs.readdir();
-// slider.append("<img></img>");
-// ```<div class="gallery-cell">
-// <img src="../assets/square_pics/sebastian.jpg" alt="" title="Sebastian, Rhian Kaye S." />
-// </div>```;
-// };
+	$(".gallery-container").append($gallery);
+}
 
-// window.onload = function () {
-// };
+$("body").waitForImages(function () {
+	// All descendant images have loaded, now slide up.
+	// We previously tried using setTimeout to let the images to load first
 
-/* ------------------------------------------------------------------------- */
-import "../node_modules/flickity/css/flickity.css";
-import "flickity";
+	console.log("Images have been loaded");
+	$(".carousel").each(function (index, element) {
+		console.log(element);
+		let odd_or_even = index % 2 == 0;
+		$(element).flickity({
+			wrapAround: true,
+			percentPosition: false,
+			autoPlay: odd_or_even ? 2000 : 1500,
+			imagesLoaded: true,
+			rightToLeft: odd_or_even ? true : false,
+			prevNextButtons: false,
+			pageDots: false,
+			pauseAutoPlayOnHover: false,
+		});
+	});
+});

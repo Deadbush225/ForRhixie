@@ -42,7 +42,7 @@ html {
 h1 {
     font-size: 4em;
 
-    @include typed("Hi!👋", "How are you?😊", "I hope you're doing well, my love!😘", "I just want to say that...", 1.5, (caret-width: 2px, caret-space: 2px, iterations: 1, end-on: "You are "));
+    // @include typed("Hi!👋", "How are you?😊", "I hope you're doing well, my love!😘", "I just want to say that...", 1.5, (caret-width: 2px, caret-space: 2px, iterations: 1, end-on: "You are "));
     // overflow: hidden;
     // /* Ensures the content is not revealed until the animation */
     // border-right: .15em solid orange;
@@ -78,13 +78,25 @@ h3 {
 }
 
 
-.gallery-cell {
+.carousel-cell {
     img {
-        // width: 200px;
+        // width: 100%;
         height: 200px;
         padding: 0;
+        width: auto;
+        // display: block;
+
         // outline: 1px solid red;
     }
+
+    // min-width: auto;
+    height: 200px;
+    display: block;
+    // min-width: 100px;
+    // float: left;
+    // width: auto;
+    // width: 500px;
+    // background-color: red;
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ TYPING EFFECT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

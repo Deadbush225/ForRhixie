@@ -1,33 +1,16 @@
-import $ from "jquery";
-
-let num = 0;
-
-document.querySelectorAll(".gallery").forEach((element, index, parent) => {
-	let gallery = $(element);
-
-	console.log(gallery);
-
-	for (let i = 1; i < 10; i++) {
-		num++;
-		gallery.append(
-			'<div class="gallery-cell"><img src="./assets/img(' +
-				num +
-				').jpg" alt=""/></div>'
-		);
-	}
-});
+// import $ from "jquery";
 
 // import "../assets/img(0).jpg";
-import "../assets/img(1).jpg";
-import "../assets/img(2).jpg";
-import "../assets/img(3).jpg";
-import "../assets/img(4).jpg";
-import "../assets/img(5).jpg";
-import "../assets/img(6).jpg";
-import "../assets/img(7).jpg";
-import "../assets/img(8).jpg";
-import "../assets/img(9).jpg";
-import "../assets/img(10).jpg";
+// import "../assets/img(1).jpg";
+// import "../assets/img(2).jpg";
+// import "../assets/img(3).jpg";
+// import "../assets/img(4).jpg";
+// import "../assets/img(5).jpg";
+// import "../assets/img(6).jpg";
+// import "../assets/img(7).jpg";
+// import "../assets/img(8).jpg";
+// import "../assets/img(9).jpg";
+// import "../assets/img(10).jpg";
 // import "../assets/img(11).jpg";
 // import "../assets/img(12).jpg";
 // import "../assets/img(13).jpg";
@@ -57,3 +40,17 @@ import "../assets/img(10).jpg";
 // import "../assets/img(37).jpg";
 // import "../assets/img(38).jpg";
 // import "../assets/img(39).jpg";
+// import "../assets/img(40).jpg";
+// import "../assets/img(41).jpg";
+// import "../assets/img(42).jpg";
+// import "../assets/img(43).jpg";
+// import "../assets/img(44).jpg";
+// import "../assets/img(45).jpg";
+// import "../assets/img(46).jpg";
+// import "../assets/img(47).jpg";
+// import "../assets/img(48).jpg";
+// import "../assets/img(49).jpg";
+// import "../assets/img(50).jpg";
+// import "../assets/img(51).jpg";
+// import "../assets/img(52).jpg";
+// import "../assets/img(53).jpg";

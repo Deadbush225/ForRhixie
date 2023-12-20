@@ -23,6 +23,7 @@
 	},
 	"dependencies": {
 		"@types/jquery": "^3.5.16",
+		"jquery.waitforimages": "^2.4.0",
 		"js-cookie": "^3.0.1"
 	},
 	"module": "index.ts"

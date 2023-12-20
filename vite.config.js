@@ -16,6 +16,11 @@ const extensions = [".js", ".jsx", ".ts", ".tsx"];
 const root = resolve(__dirname, "src");
 const outDir = resolve(__dirname, "docs");
 
+// const assetsFiles = fs.readdirSync(resolve(root, "assets")).filter((file) => {
+// 	console.log(file);
+// 	return file.endsWith(".jpg");
+// });
+
 const htmlFiles = fs
 	.readdirSync(resolve(root, "pages"))
 	.filter((file) => {
@@ -64,6 +69,8 @@ export default defineConfig({
 				index: resolve(root, "index.html"),
 
 				...Object.fromEntries(htmlFiles),
+
+				// ...Object.fromEntries(assetsFiles),
 			},
 
 			output: {
