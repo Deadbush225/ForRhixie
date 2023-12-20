@@ -1,5 +1,6 @@
 @import "../../typed.css-0.8.9/typed.scss";
 
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ GENERAL ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 body,
 html {
     color: rgb(217, 23, 217);
@@ -39,6 +40,7 @@ html {
     border-radius: 5px;
 }
 
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ TYPING EFFECT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 h1 {
     font-size: 4em;
 
@@ -77,26 +79,14 @@ h3 {
     //     blink-caret .75s step-end infinite;
 }
 
-
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FLICKITY ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 .carousel-cell {
     img {
-        // width: 100%;
         height: 200px;
         padding: 0;
         width: auto;
-        // display: block;
-
-        // outline: 1px solid red;
     }
 
-    // min-width: auto;
     height: 200px;
     display: block;
-    // min-width: 100px;
-    // float: left;
-    // width: auto;
-    // width: 500px;
-    // background-color: red;
 }
-
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ TYPING EFFECT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

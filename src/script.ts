@@ -32,9 +32,6 @@ for (let index = 0; index < 1; index++) {
 }
 
 $("body").waitForImages(function () {
-	// All descendant images have loaded, now slide up.
-	// We previously tried using setTimeout to let the images to load first
-
 	console.log("Images have been loaded");
 	$(".carousel").each(function (index, element) {
 		console.log(element);
