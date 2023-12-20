@@ -1,6 +1,7 @@
 import "./scripts/interfaces.ts";
 
-import Flickity from "../node_modules/flickity/dist/flickity.pkgd.min.js";
+// import "../node_modules/flickity/dist/flickity.pkgd.min.js";
+import "flickity";
 import "../node_modules/flickity/dist/flickity.min.css";
 
 import "./styles/styles.scss";
