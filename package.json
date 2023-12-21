@@ -28,7 +28,8 @@
 		"@types/jquery": "^3.5.16",
 		"jquery-bridget": "^3.0.1",
 		"jquery.waitforimages": "^2.4.0",
-		"js-cookie": "^3.0.1"
+		"js-cookie": "^3.0.1",
+		"typeit": "^8.8.0"
 	},
 	"module": "index.ts"
 }
