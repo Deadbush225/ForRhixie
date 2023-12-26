@@ -6,23 +6,77 @@ html {
     color: rgb(217, 23, 217);
     background-color: #181e55;
     height: 100%;
+    // font-family: ;
     font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    // overflow-y: hidden;
+    margin: 0;
 }
 
 .main-container {
-    flex-direction: column;
-    display: flex;
+    // flex-direction: column;
+    // display: flex;
+    display: grid;
     width: auto;
-    height: auto;
+    // height: auto;
+    height: 100%;
+}
+
+.main-container div {
+    //  padding: 50px;
+    //  background-color: rgba(0,0,0,0.5);
+    grid-row-start: 1;
+    grid-column-start: 1;
 }
 
 .flex-container {
     width: 100%;
-    height: calc(100% - 16px); // minus the innate margin
+    height: 100vh; // minus the innate margin
+    // height: calc(100% - 16px); // minus the innate margin
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: center;
+    z-index: 2;
+
+}
+
+.gallery-container {
+    z-index: 0;
+}
+
+#type-container {
+    position: fixed;
+    flex-direction: column;
+    //     #description {
+    //         text-align: center;
+    //         width: auto;
+    //     }
+}
+
+#typedtext {
+    text-align: center;
+}
+
+.gray {
+    background-color: black;
+    opacity: 50%;
+    display: block;
+    position: fixed;
+
+    height: 100vh;
+    width: 100vw;
+
+    z-index: 1;
+
+}
+
+.blur {
+    background: radial-gradient(50% 40% at center, #000000, transparent);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 1;
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ SCROLLBAR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -41,42 +95,58 @@ html {
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ TYPING EFFECT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-h1 {
-    font-size: 4em;
+h3 {
+    font-size: 2em;
+    color: rgb(217, 23, 217);
 
-    // @include typed("Hi!👋", "How are you?😊", "I hope you're doing well, my love!😘", "I just want to say that...", 1.5, (caret-width: 2px, caret-space: 2px, iterations: 1, end-on: "You are "));
-    // overflow: hidden;
-    // /* Ensures the content is not revealed until the animation */
-    // border-right: .15em solid orange;
-    // /* The typwriter cursor */
-    // white-space: nowrap;
-    // /* Keeps the content on a single line */
-    // margin: 0 auto;
-    // /* Gives that scrolling effect as the typing happens */
-    // letter-spacing: .15em;
-    // /* Adjust as needed */
-    // animation:
-    //     typing 3.5s steps(40, end),
-    //     blink-caret .75s step-end infinite;
+    margin: 0 // font-weight: 800;
 }
 
-h3 {
-    font-size: 3em;
+#emoji {
+    font-size: 2em;
+}
 
-    // @include typed("<[250]>Loved", "Beautiful", "Sexy", "Patient", 1, (caret: false, iterations: 1, end-on: "my only ONE💗"));
-    // overflow: hidden;
-    // /* Ensures the content is not revealed until the animation */
-    // border-right: .15em solid orange;
-    // /* The typwriter cursor */
-    // white-space: nowrap;
-    // /* Keeps the content on a single line */
-    // margin: 0 auto;
-    // /* Gives that scrolling effect as the typing happens */
-    // letter-spacing: .15em;
-    // /* Adjust as needed */
-    // animation:
-    //     typing 3.5s steps(40, end),
-    //     blink-caret .75s step-end infinite;
+#description {
+    font-weight: 900;
+    // }
+
+    // div.text {
+    background: linear-gradient(-45deg, #6355a4, #6355a4, #e89a3e, #e89a3e);
+    background-size: 300%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 2em;
+    // font-size: 5vw;
+    // letter-spacing: -5px;
+    text-transform: uppercase;
+    background-clip: text; // compatibility below
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animated_text 10s ease-in-out infinite;
+    -moz-animation: animated_text 10s ease-in-out infinite;
+    -webkit-animation: animated_text 10s ease-in-out infinite;
+}
+
+@keyframes animated_text {
+    0% {
+        background-position: 0px 50%;
+    }
+
+    25% {
+        background-position: 100% 50%;
+    }
+
+    50% {
+        background-position: 0px 50%;
+    }
+
+    75% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0px 50%;
+    }
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FLICKITY ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

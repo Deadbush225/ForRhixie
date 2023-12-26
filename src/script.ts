@@ -2,14 +2,6 @@
 import "https://code.jquery.com/jquery-3.6.3.slim.js";
 import "https://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js";
 
-declare global {
-	interface JQuery {
-		// setJQuery(jquery: any): void;
-		waitForImages(func: Function): void;
-		// flickity(options: any);
-	}
-}
-
 // import "../node_modules/flickity/dist/flickity.pkgd.min.js"; // //todo: make this persist on build
 
 import jQueryBridget from "jquery-bridget";
@@ -19,6 +11,16 @@ import "../node_modules/flickity/dist/flickity.min.css";
 import "./styles/styles.scss";
 
 import TypeIt from "typeit";
+
+declare global {
+	interface JQuery {
+		waitForImages(func: Function): void;
+		// flickity(options: any);
+	}
+	interface Flickity {
+		setJQuery(): any;
+	}
+}
 
 function sleepFor(sleepDuration: number) {
 	var now = new Date().getTime();
@@ -31,7 +33,7 @@ let range = Array.from({ length: 54 }, (_, i) => i + 1);
 // console.log(range);
 
 // let num = 1;
-for (let index = 0; index < 6; index++) {
+for (let index = 0; index < 4; index++) {
 	let $gallery = $([`<div class="carousel">`, `</div>`].join("\n"));
 
 	// let $gallery = $(".carousel");
@@ -75,3 +77,114 @@ $("body").waitForImages(function () {
 		});
 	});
 });
+
+let descriptionş = {
+	Beautiful: "😊",
+	Loved: "💗",
+	Cute: "😉",
+	Sexy: "🤭",
+	Smart: "🎓",
+	Creative: "🎨",
+	Enough: "🥰",
+	"Worth it": "😚",
+};
+
+let t = Object.keys(descriptionş);
+function generateDescription() {
+	let i = t.splice(Math.floor(t.length * Math.random()), 1);
+
+	console.log(i);
+	console.log(descriptionş[i]);
+
+	return (
+		"<span id='description'>" +
+		i +
+		"</span>" +
+		"<span id='emoji'>" +
+		descriptionş[i] +
+		"</span>"
+	);
+}
+
+window.onload = function () {
+	new TypeIt("#typedtext", {
+		// strings: ["test"],
+		speed: 80,
+		startDelay: 900,
+		waitUntilVisible: true,
+		afterComplete: async (n: any) => {
+			let $description = $(
+				[`<h3 id="description-container">`, `</h3>`].join("\n")
+			);
+			$("#type-container").append($description);
+
+			n.destroy();
+
+			let f = new TypeIt("#description-container", {
+				speed: 80,
+				startDelay: 500,
+				// waitUntilVisible: true,
+			})
+				.type("&nbsp;")
+				// .break()
+				.type(generateDescription())
+				.pause(500)
+				.delete("#description")
+				.type(generateDescription())
+				.pause(500)
+				.delete("#description")
+				.type(generateDescription())
+				.pause(500)
+				.delete("#description")
+				.type(generateDescription())
+				.pause(500)
+				.delete("#description")
+				.type(generateDescription())
+				.pause(500)
+				.delete("#description")
+				.type(generateDescription())
+				.pause(500)
+				.delete("#description")
+				.type(generateDescription())
+				.pause(500)
+				.delete("#description")
+				.type(generateDescription())
+				.go();
+		},
+	})
+		.type("Hi!👋", { delay: 1500, lifeLike: true })
+		.pause(500)
+		.delete()
+		// .move(-8, { delay: 100 })
+		.type("How are you?😊", { lifeLike: true })
+		.pause(1000)
+		.delete()
+
+		.type("I hope you're doing well, my love!😘", {
+			lifeLike: true,
+		})
+		.pause(2500)
+		.delete()
+		.type("I just want to say that...", { lifeLike: true })
+		.pause(1500)
+		.delete()
+		.type("You are")
+		// .type("Testing")
+		.pause(500)
+		// .break()
+		//
+		// .delete("#description")
+		.go();
+	// .destroy();
+
+	// // let f = new TypeIt("#type-container", {
+	// // 	speed: 80,
+	// // 	startDelay: 3000,
+	// // 	// waitUntilVisible: true,
+	// // })
+	// .go();
+
+	//color each description
+};
+
+//Hi!👋", "How are you?😊", "I hope you're doing well, my love!😘", "I just want to say that...", 1.5, (caret-width: 2px, caret-space: 2px, iterations: 1, end-on: "You are
