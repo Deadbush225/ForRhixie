@@ -33,7 +33,7 @@ let range = Array.from({ length: 54 }, (_, i) => i + 1);
 // console.log(range);
 
 // let num = 1;
-for (let index = 0; index < 4; index++) {
+for (let index = 0; index < 5; index++) {
 	let $gallery = $([`<div class="carousel">`, `</div>`].join("\n"));
 
 	// let $gallery = $(".carousel");
