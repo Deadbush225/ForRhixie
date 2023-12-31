@@ -1,4 +1,3 @@
-// import "./scripts/interfaces.ts";
 import "https://code.jquery.com/jquery-3.6.3.slim.js";
 import "https://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js";
 
@@ -9,6 +8,7 @@ import Flickity from "flickity"; // todo: make this persist in dev
 import "../node_modules/flickity/dist/flickity.min.css";
 
 import "./styles/styles.scss";
+import "./scripts/interfaces.ts";
 
 import TypeIt from "typeit";
 
@@ -22,17 +22,9 @@ declare global {
 	}
 }
 
-function sleepFor(sleepDuration: number) {
-	var now = new Date().getTime();
-	while (new Date().getTime() < now + sleepDuration) {
-		/* Do nothing */
-	}
-}
-
 let range = Array.from({ length: 54 }, (_, i) => i + 1);
 // console.log(range);
 
-// let num = 1;
 for (let index = 0; index < 5; index++) {
 	let $gallery = $([`<div class="carousel">`, `</div>`].join("\n"));
 
@@ -40,16 +32,14 @@ for (let index = 0; index < 5; index++) {
 
 	for (let index = 1; index < 10; index++) {
 		let rand_index = Math.floor(Math.random() * range.length);
-		console.log(rand_index);
-		console.log(range[rand_index]);
-		// index = rand * range.length; //(5)
+		// console.log(rand_index);
+		// console.log(range[rand_index]);
 		$gallery.append(
 			'<div class="carousel-cell"><img id="image" src="./assets/img(' +
 				range[rand_index] +
 				').jpg" alt="" /></div>'
 		);
 		range.splice(rand_index, 1);
-		// num++;
 	}
 
 	$(".gallery-container").append($gallery);
@@ -78,7 +68,7 @@ $("body").waitForImages(function () {
 	});
 });
 
-let descriptionş = {
+let descriptionş: IStringIndex = {
 	Beautiful: "😊",
 	Loved: "💗",
 	Cute: "😉",
@@ -91,7 +81,7 @@ let descriptionş = {
 
 let t = Object.keys(descriptionş);
 function generateDescription() {
-	let i = t.splice(Math.floor(t.length * Math.random()), 1);
+	let i: string = t.splice(Math.floor(t.length * Math.random()), 1).join();
 
 	console.log(i);
 	console.log(descriptionş[i]);
@@ -155,7 +145,6 @@ window.onload = function () {
 		.type("Hi!👋", { delay: 1500, lifeLike: true })
 		.pause(500)
 		.delete()
-		// .move(-8, { delay: 100 })
 		.type("How are you?😊", { lifeLike: true })
 		.pause(1000)
 		.delete()
@@ -171,18 +160,8 @@ window.onload = function () {
 		.type("You are")
 		// .type("Testing")
 		.pause(500)
-		// .break()
-		//
-		// .delete("#description")
 		.go();
 	// .destroy();
-
-	// // let f = new TypeIt("#type-container", {
-	// // 	speed: 80,
-	// // 	startDelay: 3000,
-	// // 	// waitUntilVisible: true,
-	// // })
-	// .go();
 
 	//color each description
 };
